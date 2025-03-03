@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myan Pon Nami - Premium Myanmar Products</title>
+    <link href="/img/logo.jpg" rel="icon" type="image/png" sizes="32x32"/>
+
+    <!-- Swiper CSS (For Sliders) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Lightbox CSS (For Click to Zoom) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        /* Header Section */
+        .header {
+            width: 100%;
+            height: 200px;
+            background: url('img/bg.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+        }
+
+        /* Section Styles */
+        .section {
+            max-width: 95%;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .section h1 {
+            font-size: 26px;
+            background-color: #f04e31;
+            padding: 12px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Swiper Styling */
+        .swiper {
+            width: 100%;
+            padding: 15px 0;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo { width: 100px; height: 100px; }
+            .section h1 { font-size: 22px; }
+            .swiper-slide img { max-height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="img/logo.jpg" alt="Logo" class="logo">
+    </header>
+
+    <!-- Introduction -->
+    <div class="section">
+        <h1>Welcome to Myan Pon Nami</h1>
+        <p>We offer the finest traditional Myanmar products, from handmade lacquerware to delicious local foods!</p>
+    </div>
+
+    <!-- Food Showcase -->
+    <div class="section">
+        <h1>Burmese Traditional Foods</h1>
+        <div class="swiper foodSwiper">
+            <div class="swiper-wrapper">
+                <!-- Food Images (13) -->
+                <script>
+                    for (let i = 1; i <= 13; i++) {
+                        document.write(`<div class="swiper-slide"><a href="img/food${i}.jpg" data-lightbox="foods"><img src="img/food${i}.jpg" alt="Food ${i}"></a></div>`);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Art Showcase -->
+    <div class="section">
+        <h1>Art</h1>
+        <div class="swiper artSwiper">
+            <div class="swiper-wrapper">
+                <!-- Art Images (15) -->
+                <script>
+                    for (let i = 1; i <= 15; i++) {
+                        document.write(`<div class="swiper-slide"><a href="img/art${i}.jpg" data-lightbox="art"><img src="img/art${i}.jpg" alt="Art ${i}"></a></div>`);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Store Showcase -->
+    <div class="section">
+        <h1>🏪 Visit Our Store 🏪</h1>
+        <div class="swiper storeSwiper">
+            <div class="swiper-wrapper">
+                <!-- Store Images (12) -->
+                <script>
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`<div class="swiper-slide"><a href="img/store${i}.jpg" data-lightbox="store"><img src="img/store${i}.jpg" alt="Store ${i}"></a></div>`);
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="section">
+        <h1>📞 Contact Us 📞</h1>
+        <p>📍 Location: 33rd upper street.  Yangon Myanmar</p>
+        <p>📞 Phone: +959793386144</p>
+        <a href="tel:+959793386144">Call Now</a>
+        <p>🔗 <a href="https://facebook.com/myanponnami" target="_blank">Facebook Page</a></p>
+    </div>
+
+    <!-- Swiper & Lightbox JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        function createSwiper(className) {
+            new Swiper(`.${className}`, {
+                loop: true,
+                autoplay: { delay: 2000 },
+                spaceBetween: 10,
+                slidesPerView: 1,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            });
+        }
+
+        createSwiper("foodSwiper");
+        createSwiper("artSwiper");
+        createSwiper("storeSwiper");
+    </script>
+
+</body>
+</html>
